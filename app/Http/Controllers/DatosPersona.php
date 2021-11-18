@@ -8,7 +8,7 @@ class DatosPersona extends Controller
 {
 public function second()
 {
- //   return view('personas');
+ //   return view('personas'); kkkk
 
     $titles = $users = DB::table('ejemplo')->distinct()->get();
 
