@@ -123,18 +123,19 @@ return Excel::download(new AgendaAgrupExport, 'agenda_agrupada.xlsx');
 
        }
 
+public function Parametros_cod(){
+
+  return view('Parametros_cod');
+}
 
 
-
-
-
- public function second()
+ public function indexadmin()
  {
   //   return view('personas'); kkkk
 
-     $titles = $users = DB::table('ejemplo')->distinct()->get();
+  //   $titles = $users = DB::table('ejemplo')->distinct()->get();
 
-     return view('personas', ['info' => $titles]);
+     return view('login');
 
  }
 

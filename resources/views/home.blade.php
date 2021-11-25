@@ -127,8 +127,10 @@
 
 @section('contenedor_general')
 
+
     @foreach($con_d as $con2)
       <?php
+
        $scaj=$con2->semana;
        $fcaj=$con2->finde;
       ?>

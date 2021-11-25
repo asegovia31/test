@@ -39,7 +39,7 @@ function closeNavi() {
 <div id="menu">
 <a href="{{url('/')}}" ><div id="btn-menu">Agenda Proveedor</div></a>
 <a href="{{url('/documentos')}}" ><div id="btn-menu">Documentos</div></a>
-<a href="Login.php" ><div id="btn-menu">Login</div></a>
+<a href="{{url('/login')}}" ><div id="btn-menu">Login</div></a>
 </div>
 
 

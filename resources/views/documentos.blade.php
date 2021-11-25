@@ -1,13 +1,13 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Agenda Redex</title>
-<script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="scripts/jquery-latest.js"></script>
-<script type="text/javascript" src="scripts/jquery.tablesorter.min.js"></script>
-<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{{url('/js/jquery-3.1.1.min.js')}}"></script>
+<script type="text/javascript" src="{{url('/js/jquery-latest.js')}}"></script>
+<script type="text/javascript" src="{{url('/js/jquery.tablesorter.min.js')}}"></script>
+<link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+
 <script>
         $(function(){
           $("#myTable").tablesorter({widgets: ['zebra']});
@@ -61,15 +61,14 @@ table {
 
 <div id="header">
 
-
 <img src="{{url('/img/logoripley.png')}}" style="float:left; margin-left:40px; margin-top:20px;"  height="50" width="120"/>
 <img src="{{url('/img/logoripley2.png')}}" style="float:left; margin-left:40px; margin-top:20px;"  height="50" width="120"/>
 <h2>Agenda Proveedores Nacionales</h2>
 </div>
 <div id="menu">
-<a href="index.php" ><div id="btn-menu">Agenda proveedor</div></a>
-<a href="Documentos.php" ><div id="btn-menu">Documentos</div></a>
-<a href="Login.php"><div id="btn-menu">Login</div></a>
+<a href="{{url('/')}}" ><div id="btn-menu">Agenda proveedor</div></a>
+<a href="{{url('/documentos')}}" ><div id="btn-menu">Documentos</div></a>
+<a href="{{url('/login')}}"><div id="btn-menu">Login</div></a>
 </div>
 
 <div id="main">
@@ -78,11 +77,8 @@ table {
 date_default_timezone_set('UTC');
  $hoy = date("Y-m-d");
  $dia1 = date("Y-m-d",strtotime( '+1 day' , strtotime($hoy)));
-
 ?>
 <?php
-
-
 $cons=DB::select("SELECT * FROM documentos ORDER BY fecha desc");
  ?>
 
