@@ -47,14 +47,14 @@ if (isset($_SESSION['nombre_user'])) {
   <img src="{{url('/img/users.png')}}" height="90" width="90" style="float:left;"/> Administrar Cuentas de Usuarios </div></a>
 
 
-<a href="DocumentosAdmin.php"><div id="box-msg3" style="background-color:#1d6f44;" onclick="openNav()">
+<a href="{{url('Documentosadmin')}}"><div id="box-msg3" style="background-color:#1d6f44;" onclick="openNav()">
   <img src="{{url('/img/files.png')}}" height="90" width="90" style="float:left;"/>Administrar  Documentos</div></a>
 
-<a href="Mensaje.php"><div id="box-msg3" style="background-color:#e20821;" onclick="openNav()">
+<a href="{{url('mensaje')}}"><div id="box-msg3" style="background-color:#e20821;" onclick="openNav()">
   <img src="{{url('/img/msje2.png')}}" height="90" width="90" style="float:left;"/> Administrar Mensaje</div></a>
 
 
-<a href="Capacidades.php"><div id="box-msg3" style="background-color:#fbc040;" onclick="openNav()">
+<a href="{{url('capacidades')}}"><div id="box-msg3" style="background-color:#fbc040;" onclick="openNav()">
   <img src="{{url('/img/capacidad.png')}}" height="90" width="90" style="float:left;"/> Administrar Capacidades </div></a>
 
 

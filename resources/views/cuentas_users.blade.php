@@ -137,7 +137,7 @@ $resultadodoc = DB::select("SELECT * FROM usuarios");
                             <input type="hidden" name="id" value="<?php //echo $result->id; ?>" />
                             <td><?php echo $result->correo; ?></td>
                             <td align="center">
-                            <a href="Delete_user.php?id=<?php echo $result->correo;?> ">
+                            <a href="{{url('Delete_user',[$result->correo])}} ">
                             <img src="{{url('/img/delete.png')}}"/></a></td>
                           </tr>
                         <?php

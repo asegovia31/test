@@ -6,6 +6,7 @@ use App\Post;
 use App\Exports\AgendaAgrupExport;
 use App\Exports\agendalineaExport;
 use App\Exports\agendaskuExport;
+use App\Exports\agenda;
 use App\Exports\puertaexpressExport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -123,10 +124,43 @@ return Excel::download(new AgendaAgrupExport, 'agenda_agrupada.xlsx');
 
        }
 
+       public function export5()
+       {
+
+ return Excel::download(new agenda, 'Agenda.xlsx');
+
+       }
+
+
+
 public function Parametros_cod(){
 
   return view('Parametros_cod');
 }
+public function subir_datos(){
+
+  return view('Documentosadmin');
+}
+
+
+public function parametros()
+{
+return view('parametros');
+}
+public function eliminar($id)
+{
+return view('Delete_user',['id' => $id]);
+
+}
+public function eliminar_doc($id)
+{
+return view('Delete_doc',['id' => $id]);
+}
+public function save_msg()
+{
+return view('mensaje_ins');
+}
+
 
 
  public function indexadmin()

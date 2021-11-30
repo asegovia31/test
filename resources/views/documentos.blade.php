@@ -104,7 +104,7 @@ $cons=DB::select("SELECT * FROM documentos ORDER BY fecha desc");
                             <?php echo $result->fecha; ?>
                             </td>
                             <td align="center">
-                            	<a href="Download.php?nombre=<?php echo $result->nombre; ?>">
+                            	<a href="{{url('Descarga_doc',[$result->nombre])}}">
                             	<img src="{{url('/img/download.png')}}" /></a>
                             </td>
                         </tr>

@@ -98,7 +98,7 @@ function closeNavi() {
     <button id="btn-descarga" class="btn-descarga">Descargar Agenda SKU</button>
   </a>
   Estatus Agenda Próximos 14 días
- </div>
+</div>
 
 <!-- MOSTRAMOS LAS FECHAS-->
 <div id="grilla_fila1">

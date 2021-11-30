@@ -224,7 +224,7 @@ if(!empty($consultamensj)){
 foreach($consultamensj as $arreglomsj)
 {
 $msj=$arreglomsj->mensaje;
-echo $msj;
+//echo $msj;
 }
 }else{
 $msj="sin mensaje";
@@ -398,7 +398,7 @@ $oc= "No encuentra registros";
 
 <div id="main">
 <div id="box-agenda">
-<div id="box-tit"><a href="DescargarAgenda.php"><button id="btn-descarga" class="btn-descarga">Descargar Agenda</button></a>Estatus Agenda Próximos 14 días</div>
+<div id="box-tit"><a href="{{url('/export/agenda/')}}"><button id="btn-descarga" class="btn-descarga">Descargar Agenda</button></a>Estatus Agenda Próximos 14 días</div>
 
 <!-- MOSTRAMOS LAS FECHAS-->
 <div id="grilla_fila1">
@@ -1290,7 +1290,7 @@ if($n1>=$scaj){
 <!-- **************************************************************************************************************************-->
 
 <div id="box-agenda">
-<div id="box-tit"><a href="DescargarPta.php"><button id="btn-descarga" class="btn-descarga">Descargar</button></a>Estatus Puerta Express Próximos 14 días</div>
+<div id="box-tit"><a href="{{url('/export/puertaexpress/')}}"><button id="btn-descarga" class="btn-descarga">Descargar</button></a>Estatus Puerta Express Próximos 14 días</div>
 
 <!-- MOSTRAMOS LAS FECHAS-->
 <div id="grilla_fila1">
