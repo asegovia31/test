@@ -173,6 +173,20 @@ return view('mensaje_ins');
 
  }
 
+ public function save_cap()
+ {
+
+     return view('guardar_capacidad');
+
+ }
+
+ public function loaddata()
+ {
+
+ return view('capacidades');
+
+ }
+
 
 
 }

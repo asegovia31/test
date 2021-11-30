@@ -48,6 +48,8 @@ date_default_timezone_set('UTC');
 
       <?php
         if (isset($_POST['btnCargar'])) {
+        //  print_r($_POST['comboCapacidad']);exit(0);
+        $comboCapacidad =  $_POST['comboCapacidad'];
           # code...
             $arreglocapacidad =DB::select("SELECT * FROM capacidad WHERE tipo_manejo ='$comboCapacidad'");
             //$resultado = mysql_query($consutacapacidad);
@@ -57,6 +59,7 @@ date_default_timezone_set('UTC');
 
 
     <form name="frmCargar" class="frmCargar" action="{{url('capacidades')}}" method="post">
+      @csrf
       <div id="box-tit">Seleccionar tipo de manejo a modificar</div>
       <ul>
         <li>
@@ -76,30 +79,29 @@ date_default_timezone_set('UTC');
             <button type="submit" name="btnCargar" class="btnCargar">Cargar capacidad</button>
        </li>
        </ul>
-
-
 	   </form>
 
 
 	   <form name="frmCargar" class="frmLogin" action="{{url('guarda_capacidad')}}" method="post">
+       @csrf
        <div id="box-tit">Capacidades a cambiar</div>
 
        <ul>
 	    <li>
          <label >Tipo de Manejo</label>
-    <input type="text" name="txtSem" class="txtSem"  value="<?php //echo $arreglocapacidad[0]->tipo_manejo;?>">
+    <input type="text" name="txtSem" class="txtSem"  value="<?php  if (isset($arreglocapacidad[0]->tipo_manejo)) { echo $arreglocapacidad[0]->tipo_manejo; } ?>">
        </li>
        <li>
          <label >Semana</label>
-    <input type="text" name="txtSem" class="txtSem"  value="<?php //echo $arreglocapacidad[0]->semana;?>">
+    <input type="text" name="txtSem" class="txtSem"  value="<?php if (isset($arreglocapacidad[0]->semana)) {  echo $arreglocapacidad[0]->semana; } ?>">
        </li>
        <li>
          <label>Sábado</label>
-    <input type="text" name="txtSab" class="txtSab"  value="<?php //echo $arreglocapacidad[0]->finde;?>">
+    <input type="text" name="txtSab" class="txtSab"  value="<?php if (isset($arreglocapacidad[0]->finde)) {  echo $arreglocapacidad[0]->finde; } ?>">
        </li>
        <li>
          <label>Tipo de manejo a modificar</label>
-         <input type="text" name="txtTipo" class="txtTipo" readonly="readonly" value="<?php //echo $arreglocapacidad[0]->tipo_manejo; ?> "/>
+         <input type="text" name="txtTipo" class="txtTipo" readonly="readonly" value="<?php if (isset($arreglocapacidad[0]->tipo_manejo)) {  echo $arreglocapacidad[0]->tipo_manejo;} ?> "/>
        </li>
        <li>
          <button type="submit" name="btnGuardar" class="btnGuardar">Guarda Capacidades</button>

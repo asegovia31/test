@@ -40,12 +40,14 @@ Route::get('Delete_user/{id}', 'HomeController@eliminar');
 Route::view('logout','logout')->name('logout');
 Route::view('cuentas_users','cuentas_users')->name('cuentas_users');
 Route::view('mensaje','mensaje')->name('mensaje');
-Route::view('capacidades','capacidades')->name('capacidades');
 Route::match(['get', 'post'],'mensaje_ins','HomeController@save_msg');
+Route::match(['get', 'post'],'capacidades','HomeController@loaddata')->name('capacidades');
+Route::match(['get', 'post'],'guarda_capacidad','HomeController@save_cap');
 Route::match(['get', 'post'],'Parametros_cod','HomeController@Parametros_cod')->name('Parametros_cod');
 Route::get('Delete_user/{id}', 'HomeController@eliminar');
 Route::get('Documentosadmin', 'StorageController@index');
 Route::post('storage/create', 'StorageController@save');
+Route::view('puerta_express_seg','puerta_express_seg')->name('puerta_express_seg');
 
 //Route::get('blog','HomeController@ConsultarPanel')->name('blog');
 //Route::view('blog','blog')->name('blog');

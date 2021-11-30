@@ -49,7 +49,7 @@ date_default_timezone_set('UTC');
 </div>
 
 
- <a href="Puerta Express2.php"><div id="box-msg" style="background-color:#2a80b9;" onclick="openNav()">
+ <a href="{{url('puerta_express_seg')}}"><div id="box-msg" style="background-color:#2a80b9;" onclick="openNav()">
 <img src="{{url('/img/Formulario.png')}}" height="65" width="65" style="float:left;"/> Ingresar/Consultar Puerta Express </div></a>
 <?php $fech_cons=date('Y-m-d');
       $calendar=date('Y-m-d');
