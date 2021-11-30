@@ -15,7 +15,7 @@ class puertaexpressExport implements FromView
 
           $consultas = puertaexpress::select('nro_cta','rut_proveedor')->get();
 
-                      return view('descargapuerta', [
+                      return view('descarga_ptaexpress', [
                           'cons_pex' => $consultas
                       ]);
         }

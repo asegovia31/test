@@ -6,6 +6,7 @@ use App\Post;
 use App\Exports\AgendaAgrupExport;
 use App\Exports\agendalineaExport;
 use App\Exports\agendaskuExport;
+use App\Exports\Descarga_ptaExport;
 use App\Exports\agenda;
 use App\Exports\puertaexpressExport;
 use Illuminate\Http\Request;
@@ -131,6 +132,15 @@ return Excel::download(new AgendaAgrupExport, 'agenda_agrupada.xlsx');
 
        }
 
+       public function export6(Request $request)
+       {
+
+
+ return Excel::download(new Descarga_ptaExport, 'Descarga_excel.xlsx');
+
+       }
+
+
 
 
 public function Parametros_cod(){
@@ -184,6 +194,14 @@ return view('mensaje_ins');
  {
 
  return view('capacidades');
+
+ }
+
+ public function loaddata2()
+ {
+
+ return view('puerta_express_seg');
+
 
  }
 

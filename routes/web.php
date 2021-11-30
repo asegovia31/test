@@ -27,6 +27,7 @@ Route::get('export/agenda_linea/', 'HomeController@export2');
 Route::get('export/agenda_sku/', 'HomeController@export3');
 Route::get('export/puertaexpress/', 'HomeController@export4');
 Route::get('export/agenda/', 'HomeController@export5');
+Route::get('export/descarga_ptaexpress/', 'HomeController@export6');
 Route::view('documentos','documentos')->name('documentos');
 //Route::view('Documentosadmin','Documentosadmin')->name('Documentosadmin');
 Route::view('indexadmin','indexadmin')->name('indexadmin');
@@ -47,7 +48,11 @@ Route::match(['get', 'post'],'Parametros_cod','HomeController@Parametros_cod')->
 Route::get('Delete_user/{id}', 'HomeController@eliminar');
 Route::get('Documentosadmin', 'StorageController@index');
 Route::post('storage/create', 'StorageController@save');
-Route::view('puerta_express_seg','puerta_express_seg')->name('puerta_express_seg');
+
+//Route::view('puerta_express_seg','puerta_express_seg')->name('puerta_express_seg');
+Route::match(['get', 'post'],'puerta_express_seg','HomeController@loaddata2');
+Route::post('guarda_expres_save','HomeController@save_exp');
+
 
 //Route::get('blog','HomeController@ConsultarPanel')->name('blog');
 //Route::view('blog','blog')->name('blog');

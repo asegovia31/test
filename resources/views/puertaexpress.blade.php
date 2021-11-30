@@ -19,12 +19,14 @@ date_default_timezone_set('UTC');
 <script type="text/javascript" src="{{ url('/js/jquery-3.1.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('/js/jquery-latest.js') }}"></script>
 <script type="text/javascript" src="{{ url('/js/jquery.tablesorter.min.js') }}"></script>
-<link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('css/estilo.css') }}" rel="stylesheet" type="text/css" />
 <script src="{{ url('/js/calendar/src/js/jscal2.js') }}"></script>
 <script src="{{ url('/js/calendar/src/js/lang/en.js') }}"></script>
 <link rel="stylesheet" type="text/css" href="{{ url('css/calendar/src/css/jscal2.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ url('css/calendar/src/css/border-radius.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ url('css/calendar/src/css/steel/steel.css') }}" />
+
+
 
 <script>
         $(function(){
@@ -49,17 +51,17 @@ date_default_timezone_set('UTC');
 </div>
 
 
- <a href="{{url('puerta_express_seg')}}"><div id="box-msg" style="background-color:#2a80b9;" onclick="openNav()">
+<a href="{{url('puerta_express_seg')}}"><div id="box-msg" style="background-color:#2a80b9;" onclick="openNav()">
 <img src="{{url('/img/Formulario.png')}}" height="65" width="65" style="float:left;"/> Ingresar/Consultar Puerta Express </div></a>
-<?php $fech_cons=date('Y-m-d');
-      $calendar=date('Y-m-d');
-      $calendar2=date('Y-m-d');    ?>
+<?php $fech_cons = date('Y-m-d');
+      $calendar = date('Y-m-d');
+      $calendar2 = date('Y-m-d');    ?>
 <div id="box-msg2" style="background-color:#cf152d; font-size:10px;">
-<form action="Puerta Express.php" method="get">
+<form action="{{url('puertaexpress')}}" method="get">
 <table style="border:none;">
 <tr style="border:none;">
 <td style="border:none;">
-<input size="20" id="f_date" readonly="readonly"  class="input-text" name="calendar" value="<?php echo $fech_cons;?>" placeholder="Desde" required  />
+<input size="20" id="f_date" readonly="readonly"  class="input-text" name="calendar" id="calendar" value="<?php echo $fech_cons;?>" placeholder="Desde" required  />
 <button style="width:48px; height:38px; margin-top:0px; margin-left:5px; background-image:url({{url('img/calendar.png')}}); float:left;" id="f_btn"></button>
 <input type="submit" value="Consultar" style="width:120px; height:50px; margin-top:0px; margin-left:5px; float:left;"/>
 
@@ -99,16 +101,21 @@ date_default_timezone_set('UTC');
 
 </div>
 
-<a href="DescargarPtaExp.php?id=<?php echo $calendar;?>&id2=<?php echo $calendar2;?>">
+<a href="{{url('export/descarga_ptaexpress?calendar=')}}<?php if(isset($_GET['calendar'])){ echo $_GET['calendar']."&"."calendar2=".$_GET['calendar2']; } ?>">
 <div id="box-msg" style="background-color:#1d6f44;" onclick="openNav()">
 <img src="{{url('img/excel2.png')}}" height="65" width="65" style="float:left;"/> Descargar Excel </div></a>
-
 <div id="main">
-
-
 <?php
-$consultadoc = DB::select("SELECT * FROM puertaexpress WHERE fech_cta>='$calendar' AND fech_cta<='$calendar2'");//$resultadodoc = mysql_query($consultadoc);
- ?>
+//print_r($_GET['calendar']);exit(0);
+if(isset($_GET['calendar'])){
+$calendar = $_GET['calendar'];
+$calendar2 = $_GET['calendar2'];
+}else{
+$calendar = '';
+$calendar2 = '';
+}
+$consultadoc = DB::select("SELECT * FROM puertaexpress WHERE fech_cta>='$calendar' AND fech_cta<='$calendar2'");
+?>
 <div id="box-agenda">
     <div class="nav2">
         <div id="box-tit" style="font-size:14px;">Puerta Express de <?PHP echo $calendar;?></div>
