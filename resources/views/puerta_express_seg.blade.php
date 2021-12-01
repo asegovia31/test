@@ -88,14 +88,8 @@ $total = $arreglopta[0]->con_pred + $arreglopta[0]->sin_pred;
 $arreglopta2 =DB::select("SELECT * FROM puertaexpress WHERE nro_cta ='$txtBuscar'");
 //$resultado2 = mysql_query($consultapta2);
 //$arreglopta2 = mysql_fetch_array($resultado2);
-
 }
-
-
-
 ?>
-
-
 
 <form name="frmAgregaPta" class="frmAgregaPta" action="{{url('puerta_express_seg')}}" method="post">
 @csrf
@@ -173,7 +167,7 @@ $arreglopta2 =DB::select("SELECT * FROM puertaexpress WHERE nro_cta ='$txtBuscar
 
 	<li>
 		<label for="name">Departamento:</label>
-		<input type="text" name="txtDepart" class="txtDepart"  value="<?php //echo $arreglopta[0]->cod_depto;?>"/>
+		<input type="text" name="txtDepart" class="txtDepart"  value="<?php if(isset($txtBuscar)){ echo $arreglopta[0]->cod_depto;}?>"/>
 	</li>
 	<li>
 		<label for="name">Tipo Recepción: </label>
@@ -184,15 +178,15 @@ $arreglopta2 =DB::select("SELECT * FROM puertaexpress WHERE nro_cta ='$txtBuscar
 	</li>
 	<li>
 		<label for="name">División:</label>
-		<input type="text" name="txtDivision" class="txtDivision"  value="<?php //echo $arreglopta[0]->division;?>"/>
+		<input type="text" name="txtDivision" class="txtDivision"  value="<?php if(isset($txtBuscar)){ echo $arreglopta[0]->division;}?>"/>
 	</li>
 	<li>
 		<label for="name">Divisional:</label>
-		<input type="text" name="txtDivisional" class="txtDivisional"  value="<?php //echo $arreglopta[0]->divisional;?>"/>
+		<input type="text" name="txtDivisional" class="txtDivisional"  value="<?php if(isset($txtBuscar)){ echo $arreglopta[0]->divisional;}?>"/>
 	</li>
 	<li>
 		<label for="name">CECO:</label>
-		<input type="text" name="txtCC" class="txtCC"  value="<?php //echo $arreglopta[0]->ceco;?>"/>
+		<input type="text" name="txtCC" class="txtCC"  value="<?php if(isset($txtBuscar)){ echo $arreglopta[0]->ceco;}?>"/>
 	</li>
 
 
