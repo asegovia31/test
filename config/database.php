@@ -34,7 +34,7 @@ return [
     */
 
     'connections' => [
-
+/*
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),
@@ -77,15 +77,15 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
-
+*/
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'localhost'),
+            'host' => env('DB_HOST', 'LAPTOP-7OL78C2O'),
             'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE', 'agenda'),
+            'username' => env('DB_USERNAME', 'asegoviam39'),
+            'password' => env('DB_PASSWORD', 'Alan1512'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
