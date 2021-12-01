@@ -142,8 +142,8 @@ $consultadoc = DB::select("SELECT * FROM puertaexpress WHERE fech_cta>='$calenda
 							<td align="center"><?php echo number_format($result->cant_unid_agen, 0, ",", "."); ?></td>
 							<td align="center"><?php echo $result->tipo_manejo; ?></td>
 							<td align="center"><?php echo $result->fech_cta; ?></td>
-<td align="center"><a href="update.php?id=<?php echo $result->nro_cta;?> " title="EDITAR REGISTRO"><img src="img/editar.png" height="20" width="20"/></a></td>
-<td align="center"><a href="Delete_exp.php?id=<?php echo $result->nro_cta;?> " title="ELIMINAR REGISTRO"><img src="img/delete.png"/></a></td>
+<td align="center"><a href="{{url('upd',[$result->nro_cta])}}" title="EDITAR REGISTRO"><img src="{{url('img/editar.png')}}" height="20" width="20"/></a></td>
+<td align="center"><a href="{{url('delete_exp',[$result->nro_cta])}}" title="ELIMINAR REGISTRO"><img src="{{url('img/delete.png')}}"/></a></td>
                             </tr>
                         <?php
                             }

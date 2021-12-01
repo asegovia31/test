@@ -46,6 +46,9 @@ Route::match(['get', 'post'],'capacidades','HomeController@loaddata')->name('cap
 Route::match(['get', 'post'],'guarda_capacidad','HomeController@save_cap');
 Route::match(['get', 'post'],'Parametros_cod','HomeController@Parametros_cod')->name('Parametros_cod');
 Route::get('Delete_user/{id}', 'HomeController@eliminar');
+Route::get('delete_exp/{id}', 'HomeController@eliminar_exp');
+Route::get('upd/{id}', 'HomeController@actualizar');
+Route::match(['get', 'post'],'upd_r', 'HomeController@actdatos');
 Route::get('Documentosadmin', 'StorageController@index');
 Route::post('storage/create', 'StorageController@save');
 

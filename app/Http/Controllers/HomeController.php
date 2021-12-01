@@ -162,6 +162,23 @@ public function eliminar($id)
 return view('Delete_user',['id' => $id]);
 
 }
+public function eliminar_exp($id)
+{
+return view('delete_exp',['id' => $id]);
+
+}
+public function actualizar($id)
+{
+return view('upd',['id' => $id]);
+
+}
+public function actdatos()
+{
+return view('upd_r');
+
+}
+
+
 public function eliminar_doc($id)
 {
 return view('Delete_doc',['id' => $id]);
