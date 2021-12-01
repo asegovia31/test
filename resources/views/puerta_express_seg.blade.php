@@ -33,6 +33,7 @@ if(isset($_POST['btnEnviar']))
 
 
 
+
 ?>
 
 
@@ -194,11 +195,11 @@ $arreglopta2 =DB::select("SELECT * FROM puertaexpress WHERE nro_cta ='$txtBuscar
 
 	<li>
 		<label for="name">Bultos:</label>
-		<input type="text" name="txtBultos" class="txtBultos" value="<?php // echo $arreglopta2[0]->bultos;?>" style="border:1px solid #FF0000;" />
+		<input type="text" name="txtBultos" class="txtBultos" value="<?php if(isset($txtBuscar)){  echo $arreglopta2[0]->bultos;}?>" style="border:1px solid #FF0000;" />
 	</li>
 	<li>
 		<label for="name">Horario:</label>
-		<input type="time" name="txtHorario" class="txtHorario" value="<?php //echo $arreglopta2[0]->horario;?>" style="border:1px solid #FF0000;"  />
+		<input type="time" name="txtHorario" class="txtHorario" value="<?php if(isset($txtBuscar)){  echo $arreglopta2[0]->horario;}?>" style="border:1px solid #FF0000;"  />
 	</li>
 	<?php if(empty($arreglopta2[0]->despacho_express)){
 	$consultapta_3 = DB::select("SELECT * FROM aux_tiendas ORDER BY desc_tienda ASC");
@@ -215,7 +216,7 @@ $arreglopta2 =DB::select("SELECT * FROM puertaexpress WHERE nro_cta ='$txtBuscar
 				<?php
             foreach($consultapta_3 as $consultapta3){
         //while($arreglopta3=mysql_fetch_array($resultado3)){?>
-				<option value="<?php // echo $arreglopta3->desc_tienda;?>"><?php //echo $arreglopta3->desc_tienda;?></option>
+				<option value="<?php if(isset($txtBuscar)){ echo $arreglopta3->desc_tienda;}?>"><?php if(isset($txtBuscar)){ echo $arreglopta3->desc_tienda;}?></option>
 				<?php }?>
 		</select>
 	</li>
@@ -223,7 +224,7 @@ $arreglopta2 =DB::select("SELECT * FROM puertaexpress WHERE nro_cta ='$txtBuscar
 
 		<li>
 	<label for="name">Despacho Express:</label>
-<input type="text" name="txtDespExpress" class="txtDespExpress" value="<?php //echo $arreglopta2[0]->despacho_express;?>" style="border:1px solid #FF0000;" />
+<input type="text" name="txtDespExpress" class="txtDespExpress" value="<?php echo $arreglopta2[0]->despacho_express;?>" style="border:1px solid #FF0000;" />
 	</li>
 	<?php }?>
 
@@ -241,12 +242,12 @@ $arreglopta2 =DB::select("SELECT * FROM puertaexpress WHERE nro_cta ='$txtBuscar
 	<?php }else{?>
 	<li>
 		<label for="name">Lugar De Recibo:</label>
-		<input type="text" name="txtLugarRec" class="txtLugarRec" value="<?php  //echo $arreglopta2[0]->lugar_recibo;?>" style="border:1px solid #FF0000;" />
+		<input type="text" name="txtLugarRec" class="txtLugarRec" value="<?php  echo $arreglopta2[0]->lugar_recibo;?>" style="border:1px solid #FF0000;" />
 	</li>
 	<?php }?>
 	<li>
 		<label for="name">Observación:</label>
-		<input type="text" name="txtObserv" class="txtObserv" value="<?php //echo $arreglopta2[0]->observacion;?>" style="border:1px solid #FF0000;" />
+		<input type="text" name="txtObserv" class="txtObserv" value="<?php if(isset($txtBuscar)){ echo $arreglopta2[0]->observacion;}?>" style="border:1px solid #FF0000;" />
 	</li>
 
 </ul>
